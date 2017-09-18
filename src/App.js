@@ -3,6 +3,10 @@ import logo from './logo.svg';
 
 import styled from 'styled-components';
 
+const Header = Header.div '
+  text-align: center;
+'
+
 class App extends Component {
   render() {
     return (
