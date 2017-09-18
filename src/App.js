@@ -3,9 +3,10 @@ import logo from './logo.svg';
 
 import styled from 'styled-components';
 
-const Header = Header.div '
+const Header = Header.div ,
   text-align: center;
-'
+  font-color: red;
+,
 
 class App extends Component {
   render() {
