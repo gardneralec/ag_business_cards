@@ -31,6 +31,18 @@ const Callout = styled.div `
   background-color: lightblue;
 `;
 
+const ImageCallout = Callout.extend `
+  > img {
+    height: 60%;
+    width: auto;
+    margin: auto 30px;
+  }
+
+  > h3 {
+    font-size: 18px;
+  }
+`;
+
 const Body = styled.div `
   height: 500px;
   width: 600px;
