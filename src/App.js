@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import HeadIMG from './Alec_Headshot.png';
-
+import headIMG from './Alec_Headshot.png';
+import headerBG from './Blue_Polygon_background-01.png';
 import styled from 'styled-components';
 
 const PageContainer = styled.div `
   width: 100vw;
   height: 100vh;
   background-color: #eeeeee;
+  overflow-y: scroll;
 `;
 
 const CardContainer = styled.div `
@@ -25,7 +25,8 @@ const CardContainer = styled.div `
 const Header = styled.div `
   width: 400px;
   height: 264px;
-  background-color: blue;
+  background: darkblue url("${headerBG}") no-repeat center center;
+  background-size: cover;
 `;
 
 const HeaderBox = styled.div `
@@ -38,15 +39,29 @@ const HeaderBox = styled.div `
   }
 
   > h1 {
-    font-size: 24px;
-    margin: 0;
+    font-size: 48px;
+    margin-bottom: 0;
+    margin-top: 7px;
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 100%
   }
 `;
 
 const Callout = styled.div `
   height: 47px;
   width: 400px;
-  background-color: lightblue;
+  background-color: #009ac5;
+
+  > h3 {
+    font-size: 26px;
+    margin: 0;
+    text-align: center;
+    line-height: 100%;
+    font-weight: 300;
+    color: #ffffff;
+    padding-top: 10px;
+  }
 `;
 
 const ImageCallout = Callout.extend `
@@ -80,13 +95,15 @@ class App extends Component {
         <CardContainer>
           <Header>
             <HeaderBox>
-              <img src={HeadIMG} alt="Alec Gardner Headshot"/>
+              <img src={headIMG} alt="Alec Gardner Headshot"/>
               <h1>Alec Gardner</h1>
             </HeaderBox>
           </Header>
-          <Callout></Callout>
+          <Callout>
+            <h3>Digital Marketer | Web Developer</h3>
+          </Callout>
           <Body></Body>
-          <Callout></Callout>
+          <ImageCallout></ImageCallout>
           <Footer/>
         </CardContainer>
       </PageContainer>
