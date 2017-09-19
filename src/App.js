@@ -18,6 +18,8 @@ const CardContainer = styled.div `
   margin: 0 auto;
   display: block;
   border: 1px solid #bbbbbb;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
 `;
 
 const Header = styled.div `
@@ -33,6 +35,11 @@ const HeaderBox = styled.div `
   > img {
     height: 175px;
     width: 175px;
+  }
+
+  > h1 {
+    font-size: 24px;
+    margin: 0;
   }
 `;
 
@@ -74,6 +81,7 @@ class App extends Component {
           <Header>
             <HeaderBox>
               <img src={HeadIMG} alt="Alec Gardner Headshot"/>
+              <h1>Alec Gardner</h1>
             </HeaderBox>
           </Header>
           <Callout></Callout>
