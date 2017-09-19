@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import HeadIMG from './Alec_Headshot.png';
 
 import styled from 'styled-components';
 
@@ -10,24 +11,34 @@ const PageContainer = styled.div `
 `;
 
 const CardContainer = styled.div `
-  width: 600px;
-  height: 1050px;
-  max-width: 600px;
-  max-height: 1050px;
-  margin: auto auto;
+  width: 400px;
+  height: 700px;
+  max-width: 400px;
+  max-height: 700px;
+  margin: 0 auto;
   display: block;
   border: 1px solid #bbbbbb;
 `;
 
 const Header = styled.div `
-  width: 600px;
-  height: 350px;
+  width: 400px;
+  height: 264px;
   background-color: blue;
 `;
 
+const HeaderBox = styled.div `
+  padding: 16px 16px 0;
+  text-align: center;
+
+  > img {
+    height: 175px;
+    width: 175px;
+  }
+`;
+
 const Callout = styled.div `
-  height: 75px;
-  width: 600px;
+  height: 47px;
+  width: 400px;
   background-color: lightblue;
 `;
 
@@ -44,14 +55,14 @@ const ImageCallout = Callout.extend `
 `;
 
 const Body = styled.div `
-  height: 500px;
-  width: 600px;
+  height: 313px;
+  width: 400px;
   background-color: white;
 `;
 
 const Footer = styled.div `
-  height: 50px;
-  width: 600px;
+  height: 29px;
+  width: 400px;
   background-color: white;
 `;
 
@@ -61,6 +72,9 @@ class App extends Component {
       <PageContainer>
         <CardContainer>
           <Header>
+            <HeaderBox>
+              <img src={HeadIMG} alt="Alec Gardner Headshot"/>
+            </HeaderBox>
           </Header>
           <Callout></Callout>
           <Body></Body>
