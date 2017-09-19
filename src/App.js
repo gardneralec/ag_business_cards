@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import headIMG from './Alec_Headshot.png';
 import headerBG from './Blue_Polygon_background-01.png';
+import reactLogo from './logo.svg';
 import styled from 'styled-components';
 
 const PageContainer = styled.div `
@@ -72,7 +73,7 @@ const ImageCallout = Callout.extend `
   }
 
   > h3 {
-    font-size: 18px;
+    font-size: 26px;
   }
 `;
 
@@ -80,6 +81,49 @@ const Body = styled.div `
   height: 313px;
   width: 400px;
   background-color: white;
+`;
+
+const BodyBox = styled.div `
+  padding: 0 16px;
+  
+  > div > img {
+    width: 25px;
+    height: 20px;
+    float: left;
+    margin-bottom: 0;
+    margin-right: 15px;
+  }
+
+  > div > h3 {
+    font-size: 22px;
+    text-align: left;
+    margin: 0;
+    line-height: 100%;
+    float: left;
+    font-weight: 300;
+  }
+`;
+
+const GreyLine = styled.div `
+  width: 100%;
+  border-bottom: 2px solid #dddddd;
+  padding-top: 10px;
+  clear:both;
+
+`;
+
+const InfoBlock = ({ src, alt, children }) => (
+  <div>
+  <img src={src} alt={alt} />
+  <h3>{children}</h3>
+  <GreyLine />
+  </div>
+)
+
+const FirstInfoBlock = styled(InfoBlock) `
+  div {
+    padding-top: 45px;
+  }
 `;
 
 const Footer = styled.div `
@@ -102,7 +146,12 @@ class App extends Component {
           <Callout>
             <h3>Digital Marketer | Web Developer</h3>
           </Callout>
-          <Body></Body>
+          <Body>
+            <BodyBox>
+              <FirstInfoBlock src={reactLogo} alt="Alec Gardner Email Address">alec@alecgardner.com</FirstInfoBlock>
+              <InfoBlock src={reactLogo} alt="Alec Gardner Phone Number">1-719-310-8396</InfoBlock>
+            </BodyBox>
+          </Body>
           <ImageCallout></ImageCallout>
           <Footer/>
         </CardContainer>
