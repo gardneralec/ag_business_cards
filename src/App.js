@@ -15,6 +15,105 @@ const PageContainer = styled.div `
   height: 100vh;
   background-color: #eeeeee;
   overflow-y: scroll;
+  font-family: 'Roboto', sans-serif;
+`;
+
+const ComingSoonContainer = styled.div `
+  height: auto;
+  max-width: 100%;
+  padding: 2.5vh 5%;
+
+  > h1 {
+    font-size: 4rem;
+    font-weight: 500;
+    font-family: inherit;
+    margin: 0 0 3vh;
+    color: #444444;
+    text-align: center;
+    line-height: 125%;
+  }
+
+  > h2 {
+    font-size: 3rem;
+    font-weight: 400;
+    font-family: inherit;
+    margin: 0 0 3vh;
+    color: #444444;
+    text-align: center;
+    line-height: 125%;
+  }
+
+  > p {
+    font-size: 1.25rem;
+    font-weight: 400;
+    font-family: inherit;
+    margin: 0 0 5vh;
+    color: #444444;
+    text-align: center;
+    line-height: 150%;
+  }
+
+  @media (max-width: 1024px) {
+    
+    > h1 {
+      font-size: 3.5rem;
+    }
+
+    > h2 {
+      font-size: 2.25rem;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    > h1 {
+      font-size: 3rem;
+    }
+
+    > h2 {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 830px) {
+    > h1 {
+      font-size: 2.75rem;
+    }
+
+    > h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+  }
+
+  @media (max-width: 768px) {
+    > h1 {
+      font-size: 2.25rem;
+    }
+
+    > h2 {
+      font-size: 1.25rem;
+    }
+
+    > p {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 610px) {
+    > h1 {
+      font-size: 1.75rem;
+    }
+
+    > h2 {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 475px) {
+    > h1 {
+      font-size: 1.25rem;
+    }
+  }
 `;
 
 const CardContainer = styled.div `
@@ -27,6 +126,7 @@ const CardContainer = styled.div `
   border: 1px solid #bbbbbb;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
+  }
 `;
 
 const Header = styled.div `
@@ -164,10 +264,18 @@ const Footer = styled.div `
   background-color: white;
 `;
 
-class App extends Component {
-  render() {
+function CardRender() {
+  let w = window.innerWidth;
+
+  if (w > 432) {
     return (
       <PageContainer>
+        <ComingSoonContainer>
+          <h1>Alec Gardner<br />Digital Marketer | Web Developer</h1>
+          <h2>New Website Coming Soon, Stay Tuned!</h2>
+          <p>Thanks for coming to my site. I'm hard at work developing a new look for it which I will be releasing very soon (I promise).
+            In the meantime, check out a different project of mine, a 200ppi digital rendition of my business card, built with React.js and styled-components.</p>
+        </ComingSoonContainer>
         <CardContainer>
           <Header>
             <HeaderBox>
@@ -195,6 +303,24 @@ class App extends Component {
           <Footer/>
         </CardContainer>
       </PageContainer>
+    );
+  }
+  else {
+    return (
+      <PageContainer>
+        <ComingSoonContainer>
+          <h1>Alec Gardner<br />Digital Marketer | Web Developer</h1>
+          <h2>New Website Coming Soon, Stay Tuned!</h2>
+        </ComingSoonContainer>
+      </PageContainer>
+    );
+  }
+}
+
+class App extends Component {
+  render() {
+    return (
+      <CardRender />
     );
   }
 }
